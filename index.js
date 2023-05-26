@@ -7,6 +7,7 @@
 
 const { brewGroups } = require("./apiWrapper/groups")
 const { brewFriends } = require("./apiWrapper/friends")
+const { brewAccountInfo } = require("./apiWrapper/accountInformation") 
 
 var cookie
 
@@ -32,6 +33,7 @@ Object.defineProperty(exports, 'cookie', {
 module.exports = {
     groups: brewGroups,
     friends: brewFriends,
+    accountInfo: brewAccountInfo,
     login: brewLogin,
     logout: brewLogout
 };
