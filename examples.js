@@ -1,5 +1,6 @@
 const brew = require("./index")
-brew.login("Cookie here")
+
+brew.login("Cookie")
 
 // Groups
 brew.groups.getInfo("1", "name").then(name => console.log(`Group Name: ${name}`))
@@ -16,3 +17,11 @@ brew.friends.acceptFriendRequest("1").then(resp => console.log(resp))
 brew.friends.declineFriendRequest("1").then(resp => console.log(resp))
 brew.friends.acceptFriendRequestWithToken("1", "abc").then(resp => console.log(resp))
 brew.friends.unfriendUser("1").then(resp => console.log(resp))
+
+// Account Information
+brew.accountInfo.getBirthdate("birthMonth").then(resp => console.log(`Birth month: ${resp}`))
+brew.accountInfo.setBirthdate("birthMonth", "birthDay", "birthYear", "password").then(resp => console.log(resp))
+brew.accountInfo.getDescription().then(resp => console.log(`Account description: ${resp}`))
+brew.accountInfo.setDescription("Hello").then(resp => console.log(resp))
+brew.accountInfo.getGender().then(resp => console.log(`Account gender: ${resp}`))
+brew.accountInfo.setGender("2").then(resp => console.log(resp))
