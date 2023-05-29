@@ -25,3 +25,10 @@ brew.accountInfo.getDescription().then(resp => console.log(`Account description:
 brew.accountInfo.setDescription("Hello").then(resp => console.log(resp))
 brew.accountInfo.getGender().then(resp => console.log(`Account gender: ${resp}`))
 brew.accountInfo.setGender("2").then(resp => console.log(resp))
+
+// Users
+brew.users.setDisplayName("ID", "Real").then(resp => console.log(resp))
+brew.users.userInfo("RobuxBalance").then(resp => console.log(`Robux balance: ${resp}`)) // RobuxBalance, UserID, ThumbnailUrl, UserName, IsAnyBuildersClubMember, IsPremium
+brew.users.info("1", "displayName").then(resp => console.log(`User display name: ${resp}`))
+brew.users.authenticated("name").then(resp => console.log(`Authenticated name: ${resp}`))
+brew.users.authenticatedCountryCode().then(resp => console.log(`Country code: ${resp}`))
